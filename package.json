@@ -1,0 +1,61 @@
+{
+  "name": "dify-ollama-rerank-gui",
+  "version": "1.0.0",
+  "description": "Dify Ollama Rerank Adapter - Windows Desktop GUI Application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:win": "electron-builder --win --x64",
+    "build:win-portable": "electron-builder --win portable --x64",
+    "postinstall": "echo Installation complete. Run 'npm start' to launch."
+  },
+  "build": {
+    "appId": "com.dify.ollama-rerank-adapter",
+    "productName": "Dify Ollama Rerank Adapter",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        },
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "icon.ico",
+      "requestedExecutionLevel": "asInvoker"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Ollama Rerank Adapter"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "renderer.js",
+      "styles.css",
+      "server/**/*",
+      "node_modules/**/*",
+      "icon.ico"
+    ],
+    "extraMetadata": {
+      "main": "main.js"
+    }
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8"
+  }
+}

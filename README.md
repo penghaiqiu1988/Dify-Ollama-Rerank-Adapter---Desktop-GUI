@@ -12,6 +12,9 @@
 - **系统托盘** — 最小化到托盘运行，不占用任务栏
 - **无命令窗口** — 纯 GUI 界面，无终端黑框
 
+<img width="973" height="970" alt="ScreenShot_2026-05-18_200517_174" src="https://github.com/user-attachments/assets/e22b1b62-10b5-410e-b3fa-3303557a3e49" />
+
+
 ## 前置条件
 
 1. **Node.js** >= 18.0.0 — [下载地址](https://nodejs.org/)
